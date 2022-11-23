@@ -19,15 +19,15 @@ class TodoController extends Controller
 
     public function insert_todo(Request $req){
         $todo = new todos();
-        $todo->name =  $req->name;
+        $todo->name = $req->name;
         $todo->save();
         return $todo;
     }
 
     public function delete_todo($id){
-        $targeted_todo = todos::where('id', $id);
+        $targeted_todo = todos::where('id', $id)->first();
         $targeted_todo->delete();
-        return $targeted_todo;
+        return response()->json(null, 204) ;
     }
 
     public function edit_todo(Request $req, $id){
