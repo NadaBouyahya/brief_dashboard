@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<>
 		<Test/>
-		<Test2 name='zobir' />
+		<Test2 list={['prop1', 'prop2', 'prop2']}/>
 		<Test3 location='solicode' />
 	</>
 );

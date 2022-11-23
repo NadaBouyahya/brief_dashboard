@@ -1,3 +1,7 @@
 export default function Test2(props){
-    return <h1>Goodbye {props.name} </h1>
+    return <ul>
+        {props.list.map(function(item){
+        return <li>{item}</li>}
+        )}
+    </ul>
 }
