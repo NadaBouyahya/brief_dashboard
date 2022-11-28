@@ -1,26 +1,27 @@
-import { Axios } from "axios"
+import axios from "axios"
 import { useState } from "react"
 
-export default function PostForm() {
+export default function PostForm(props) {
 
     const [data, setData] = useState({
         name: ""
     })
 
     function handle(e) {
-        const newData = {...data}
-        newData[e.target.id] = e.target.value
-        setData(newData)
-        console.log(newData);
+        const newData = {...data};
+        newData[e.target.name] = e.target.value;
+        setData(newData);
+        // console.log(newData);
      }
 
     function submit(e){
-        e.preventDefault()
-        Axios.post('http://127.0.0.1:8000/api/todos/', {
+        e.preventDefault();
+        axios.post('http://127.0.0.1:8000/api/todos/', {
             name : data.name
         }).then(res => {
-            console.log(res.data)
-        })
+            console.log(res.data);
+            props.setText((previous)=>{return [...previous, res.data]});
+        });
     }
 
     
@@ -38,7 +39,7 @@ export default function PostForm() {
     // }
     return (
         <form onSubmit = {(e) => submit(e)}>
-            <input onChange={(e) => handle(e)} value={data.name} type="text" id="name" />
+            <input onChange={(e) => handle(e)} value={data.name} type="text" name="name" />
             <input type="submit" value="Save" />
         </form>
 

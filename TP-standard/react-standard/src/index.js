@@ -12,7 +12,7 @@ function ParentComponent() {
 
   return (
     <>
-    <PostForm></PostForm>
+    <PostForm setText={setText}></PostForm>
       {/* <Test2 setText={setText}></Test2> */}
       <Test1 text={text} setText={setText}></Test1>
     </>
