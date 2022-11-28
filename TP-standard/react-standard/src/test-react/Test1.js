@@ -28,7 +28,7 @@ export default function Test1(props) {
                     <input onClick={deleteItem} type="button" value="delete" id-row={item.id} />
                     <input type="button" value="Edit" id-row={item.id} onClick={()=>setModal(true)}/> </li>)}
             </ul>
-            <Modal show={showModal} />
+            <Modal show={showModal} closeModal={setModal}/>
         </>
     );
 }

@@ -7,6 +7,7 @@ export default function Modal(props){
     return (
         <div>
             <h1>my modal</h1>
+            <button onClick={()=>props.closeModal(false)}>close</button>
         </div>
     )
 }
