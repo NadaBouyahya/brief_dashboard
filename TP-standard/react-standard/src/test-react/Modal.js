@@ -5,18 +5,19 @@ export default function Modal(props){
 
     const [post, setPost] = useState([]);
     useEffect(()=> {
-        axios.get('http://127.0.0.1:8000/api/todos/')
-        .then((response) => {
-            console.log(response.data);
-            setPost(response.data)
-        })
-    }, [])
+        if(props.show.status === true) {
+            axios.get('http://127.0.0.1:8000/api/todos/' + props.show.id)
+            .then((response) => {
+                console.log(response.data);
+                setPost(response.data)
+            })
+        }
+    }, [props.show])
     
 
-    if(props.show === false){
+    if(props.show.status === false){
         return;
     }
-
 
     return (
         <div>

@@ -20,14 +20,26 @@ export default function Test1(props) {
             })
     }
 
-    const [showModal, setModal] = useState(false);
+    const [showModal, setModal] = useState({status: false, id: null});
+    
+    
+    function handleEdit(event){
+        const id = event.target.getAttribute("id-row");
+        setModal(()=> {
+            return {
+                'status': true,
+                'id' : id
+            }
+        })
+    }
+
 
     return (
         <>
             <ul>
                 {props.text.map((item) => <li key={item.id}> {item.name}
                     <input onClick={deleteItem} type="button" value="delete" id-row={item.id} />
-                    <input type="button" value="Edit" id-row={item.id} onClick={()=>setModal(true)}/> </li>)}
+                    <input type="button" value="Edit" id-row={item.id} onClick={handleEdit}/> </li>)}
             </ul>
             <Modal show={showModal} closeModal={setModal}/>
         </>
