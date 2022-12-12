@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\briefs;
+use App\Models\students;
+
 use Illuminate\Http\Request;
 
 class briefController extends Controller
@@ -42,5 +44,27 @@ class briefController extends Controller
         $updated_brief->save();
         return $updated_brief;
 
+    }
+
+
+    public function attachBrief($brief_id, $student_id)
+    {
+        $student = students::where('id_student', $student_id)->first();
+        $student->briefs()->attach($brief_id);
+    }
+
+    public function detachBrief($brief_id, $student_id)
+    {
+        $student = students::where('id_student', $student_id)->first();
+        $student->briefs()->detach($brief_id);
+    }
+
+    public function assignAll($briefId)
+    {
+        $student = students::all();
+        foreach ($student as $student) {
+            $student->briefs()->attach($briefId);
+        }
+        // return redirect('BriefAssign/' . $briefId);
     }
 }
