@@ -40,7 +40,7 @@ export default function ShowData(props) {
                     <input onClick={deleteItem} type="button" value="delete" id-row={item.id} />
                     <input type="button" value="Edit" id-row={item.id} onClick={handleEdit}/> </li>)}
             </ul>
-            <Modal show={showModal} closeModal={setModal}/>
+            <Modal show={showModal} closeModal={setModal} text={props.text} setText={props.setText}/>
         </>
     );
 }

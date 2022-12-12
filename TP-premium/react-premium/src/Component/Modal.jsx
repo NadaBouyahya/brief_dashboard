@@ -28,6 +28,18 @@ export default function Modal(props){
     const updateTodo = (event)=>{
         event.preventDefault();
         axios.put('http://127.0.0.1:8000/api/todos/' + props.show.id, post)
+        .then((res)=>{
+            props.setText(
+                props.text.map((item)=>{
+                    if(item.id === Number(res.data.id)){
+                        return {...item, ...res.data}
+                    }
+                    else{
+                        return item;
+                    }
+                })
+            )
+        })
     }
 
 
