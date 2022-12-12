@@ -41,7 +41,7 @@ Route::post('students', [studentController::class, 'insert_student']);
 
 Route::delete('students/{id}', [studentController::class, 'delete_student']);
 
-Route::put('promotions/{id}', [studentController::class, 'edit_student']);
+Route::put('students/{id}', [studentController::class, 'edit_student']);
 
 // briefs
 Route::get('/briefs', [briefController::class, 'show']);

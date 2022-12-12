@@ -36,10 +36,10 @@ class studentController extends Controller
 
     public function edit_student(Request $req, $id){
         $updated_student = students::where('id_student', $id)->first();
-        $updated_student->nom = $req->fname;
-        $updated_student->prénom = $req->lname;
+        $updated_student->nom = $req->nom;
+        $updated_student->prénom = $req->prénom;
         $updated_student->email = $req->email;
-        $updated_student->promo_id = $req->promo_id; 
+        $updated_student->promo_id = $req->promo_id;
 
         $updated_student->save();
         return $updated_student;

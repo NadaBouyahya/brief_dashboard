@@ -9,4 +9,5 @@ class students extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $primaryKey = 'id_student';
 }
