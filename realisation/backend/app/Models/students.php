@@ -10,4 +10,8 @@ class students extends Model
     use HasFactory;
     public $timestamps = false;
     protected $primaryKey = 'id_student';
+    public function briefs()
+    {
+        return $this->belongsToMany(brief::class, 'student_briefs', 'student_id', 'id_brief');
+    }
 }

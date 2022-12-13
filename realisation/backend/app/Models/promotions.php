@@ -9,4 +9,8 @@ class promotions extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    public function student()
+    {
+        return $this->hasMany(Student::class, 'promo_id', 'id');
+    }
 }
