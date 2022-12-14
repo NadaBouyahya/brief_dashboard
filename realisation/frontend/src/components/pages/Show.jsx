@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -17,9 +18,9 @@ export default function ShowData(props) {
         <div className="brief_container">
             {props.text.map((item) =>
                 <div className="brief_info">
-                    <h3>{item.titre}</h3>
+                    <h3>{item.titre}:</h3>
                     <p>{item.brief_description}</p>
-                    <Link to="/Brief_details">consulter</Link>
+                    <Link to="/Brief_details/">consulter</Link>
                 </div>
 
             )}

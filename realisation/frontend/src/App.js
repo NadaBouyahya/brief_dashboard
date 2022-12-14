@@ -11,10 +11,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        
         <Routes>
           <Route path='/' element={<ShowData text={text} setText={setText} />} />
-          <Route path='/Brief_details' element={<Consult />} />
+          <Route path='/Brief_details:id_brief' element={<Consult />} />
         </Routes>
         
       </BrowserRouter>
