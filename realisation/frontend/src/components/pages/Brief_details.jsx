@@ -12,7 +12,7 @@ export default function Consult() {
 
     useEffect(() => {
         axios.get("http://127.0.0.1:8000/api/briefs/" + params.id).then((res) => {
-            console.log(res);
+            // console.log(res);
             setDetails((old)=>{return {...old, ...res.data}});
         })
     }, [])
