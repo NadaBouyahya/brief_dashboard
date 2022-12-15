@@ -13,7 +13,7 @@ class briefs extends Model
     protected $primaryKey = "id_brief";
     public function task()
     {
-        return $this->hasMany(tasks::class, 'id_task', 'id_brief');
+        return $this->hasMany(tasks::class, 'brief_id', 'id_brief');
     }
 
     public function students()
