@@ -11,7 +11,7 @@ class tasks extends Model
     public $timestamps = false;
 
     protected $primaryKey = 'id_task';
-    protected $table = 'task';
+    protected $table = 'tasks';
     public function brief(){
         return $this->belongsTo(brief::class, 'brief_id', 'id_task');
     }
