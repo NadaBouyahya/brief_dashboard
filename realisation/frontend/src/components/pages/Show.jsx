@@ -20,7 +20,7 @@ export default function ShowData(props) {
                 <div className="brief_info">
                     <h3>{item.titre}:</h3>
                     <p>{item.brief_description}</p>
-                    <Link to="/Brief_details/">consulter</Link>
+                    <Link to={"Brief_details/" + item.id_brief}>consulter</Link>
                 </div>
 
             )}

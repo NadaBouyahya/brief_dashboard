@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<ShowData text={text} setText={setText} />} />
-          <Route path='/Brief_details:id_brief' element={<Consult />} />
+          <Route path='/Brief_details/:id' element={<Consult />} />
         </Routes>
         
       </BrowserRouter>
