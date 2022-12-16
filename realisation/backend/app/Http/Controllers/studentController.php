@@ -14,6 +14,7 @@ class studentController extends Controller
 
     public function show_by_id($id){
         $student_data = students::where('id_student', $id)->first();
+        $student_data->tasks;
         return response()->json($student_data);
     }
 
