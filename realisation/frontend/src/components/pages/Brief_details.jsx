@@ -55,6 +55,8 @@ export default function Consult() {
             </div>
 
             <Link to={"/briefs/" + Details.id_brief + "/tasks"}>Taches</Link>
+            <br></br>
+            <Link to={"/briefs/" + Details.id_brief + "/students"}>consulter</Link>
         </div>
     )
 }

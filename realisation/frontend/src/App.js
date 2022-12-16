@@ -5,6 +5,7 @@ import { ReactDOM } from 'react';
 import './App.css';
 import Consult from './components/pages/Brief_details';
 import ShowTasks from './components/pages/TaskDashboard';
+import BriefStudent from './components/pages/Brief_student';
 
 function App() {
   const [text, setText] = useState([]);
@@ -16,6 +17,8 @@ function App() {
           <Route path='/' element={<ShowData text={text} setText={setText} />} />
           <Route path='/Brief_details/:id' element={<Consult />} />
           <Route path='/briefs/:id/tasks' element={<ShowTasks/>}/>
+          <Route path='/briefs/:id/students' element={<BriefStudent text={text} setText={setText}/>}/>
+
         </Routes>
         
       </BrowserRouter>
