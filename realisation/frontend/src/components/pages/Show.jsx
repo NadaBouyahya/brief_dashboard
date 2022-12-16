@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
-
 import axios from "axios";
+
+
 
 export default function ShowData(props) {
     useEffect(() => {
@@ -20,7 +20,8 @@ export default function ShowData(props) {
                 <div className="brief_info">
                     <h3>{item.titre}:</h3>
                     <p>{item.brief_description}</p>
-                    <Link to={"Brief_details/" + item.id_brief}>consulter</Link>
+                    <Link to={"Brief_details/" + item.id_brief}>Plus details</Link>
+                    <Link to={"/briefs/" + item.id_brief + "/tasks"}>Taches</Link>
                 </div>
 
             )}
