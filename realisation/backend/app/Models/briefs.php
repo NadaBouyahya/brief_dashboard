@@ -18,6 +18,6 @@ class briefs extends Model
 
     public function students()
     {
-        return $this->belongsToMany(student::class, 'students_briefs', 'brief_id', 'student_id');
+        return $this->belongsToMany(students::class, 'students_briefs', 'brief_id', 'student_id');
     }
 }

@@ -17,6 +17,7 @@ class briefController extends Controller
     public function show_by_id($id){
         $briefs_data = briefs::where('id_brief', $id)->first();
         $briefs_data->task;
+        $briefs_data->students;
         return response()->json($briefs_data);
     }
 

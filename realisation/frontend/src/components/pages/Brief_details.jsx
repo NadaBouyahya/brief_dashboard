@@ -44,7 +44,14 @@ export default function Consult() {
             </div>
             <br />
             <div>
-                <span>Etat d'avancement de brief : {progress}%</span>
+            Etat d'avancement de brief : 
+                <div style={{
+                    width: "200px",
+                    height: "30px",
+                    backgroundColor:"gray"
+                }}>
+                    <div style={{width:progress+"%", height:"30px", backgroundColor:"green"}}>{progress}%</div>
+                </div>
             </div>
 
             <Link to={"/briefs/" + Details.id_brief + "/tasks"}>Taches</Link>
