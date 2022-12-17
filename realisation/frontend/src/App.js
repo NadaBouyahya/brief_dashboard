@@ -17,7 +17,7 @@ function App() {
           <Route path='/' element={<ShowData text={text} setText={setText} />} />
           <Route path='/Brief_details/:id' element={<Consult />} />
           <Route path='/briefs/:id/tasks' element={<ShowTasks/>}/>
-          <Route path='/briefs/:id/students' element={<BriefStudent text={text} setText={setText}/>}/>
+          <Route path='/briefs/:id/students' element={<BriefStudent/>}/>
 
         </Routes>
         
