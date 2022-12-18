@@ -17,7 +17,7 @@ class briefController extends Controller
 
     public function show_by_id($id){
         $briefs_data = briefs::where('id_brief', $id)->first();
-        $briefs_data->tasks;
+        $briefs_data->task;
         $briefs_data->students;
         foreach($briefs_data->students as $student){
             $student->tasks;

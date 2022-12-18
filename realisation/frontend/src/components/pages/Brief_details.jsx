@@ -13,7 +13,7 @@ export default function Consult() {
 
     useEffect(() => {
         axios.get("http://127.0.0.1:8000/api/briefs/" + params.id).then((res) => {
-            // console.log(res);
+            console.log(res);
             setDetails((old) => { return { ...old, ...res.data } });
             let completed = 0;
             for (let i = 0; i < res.data.task.length; i++) {
@@ -44,7 +44,7 @@ export default function Consult() {
             </div>
             <br />
             <div>
-            Etat d'avancement de brief : 
+                Etat d'avancement de brief : 
                 <div style={{
                     width: "200px",
                     height: "30px",

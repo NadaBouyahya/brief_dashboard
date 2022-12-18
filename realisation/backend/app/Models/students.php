@@ -17,6 +17,6 @@ class students extends Model
     }
 
     public function tasks () {
-        return $this->belongsToMany(tasks::class, 'student_task', 'student_id', 'task_id');
+        return $this->belongsToMany(tasks::class, 'student_task', 'student_id', 'task_id')->withPivot("status_task");
     }
 }
