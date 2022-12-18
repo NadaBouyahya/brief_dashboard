@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 
 export default function BriefStudent() {
     let param = useParams();
-    const [data, setData] = useState({students:[]});
+    const [data, setData] = useState({ students: [] });
 
 
     useEffect(() => {
@@ -12,18 +12,23 @@ export default function BriefStudent() {
             setData(res.data);
             console.log(res.data);
         })
-    }, []) 
-    
+    }, [])
 
-    return (
-        <div>
-            {data.students.map((item) =>
-                <div>
-                    <h1>{item.nom}</h1>
-                    
 
-                </div>
-            )}
-        </div>
-    )
+
+        
+    // return (
+    //     <div>
+    //         {data.students.map((item, index) => {
+    //             return (
+    //                 <div key={index}>
+    //                     <h1>{item.nom}</h1>
+                        
+    //                 </div>
+    //             )
+    //         }
+
+    //         )}
+    //     </div>
+    // )
 }
