@@ -15,17 +15,37 @@ export default function ShowData(props) {
 
 
     return (
-        <div className="brief_container">
-            {props.text.map((item) =>
-                <div className="brief_info">
-                    <h3>{item.titre}:</h3>
-                    <p>{item.brief_description}</p>
-                    <Link to={"Brief_details/" + item.id_brief}>Plus details</Link>
-                    <Link to={"/briefs/" + item.id_brief + "/tasks"}>Taches</Link>
-                </div>
+        <div className="main_content flex row">
 
-            )}
+            <div className="vertical-menu w-1/6">
+                <a className="block p-3 hover:text-amber-400" href="#">Home</a>
+                <a className="block p-3 hover:text-amber-400" href="#">Promotion</a>
+                <a className="block p-3 hover:text-amber-400" href="#">Apprenants</a>
+                <a className="block p-3 hover:text-amber-400" href="#">Briefs</a>
+
+            </div>
+
+            <div className="flex w-9/12 bg-slate-100 p-12 ">
+                <div className="brief_container flex bg-white">
+                    {props.text.map((item) =>
+                        <div className="brief_info flex ml-6 flex-col items-center items-center">
+                            <h3 className="mb-3">{item.titre}:</h3>
+                            <p className="mb-5">{item.brief_description}</p>
+
+                            <div className="flex">
+                                <Link className="mr-6 bg-zinc-900 text-white p-2 rounded-lg" to={"Brief_details/" + item.id_brief}>Plus details</Link>
+                                <Link className="mr-6 text-black border border-black border-solid  rounded-lg p-2" to={"/briefs/" + item.id_brief + "/tasks"}>Taches</Link>
+                            </div>
+
+                        </div>
+
+                    )}
+                </div>
+            </div>
+
+
         </div>
+
         // <>
         //     <ul>
         //         {props.text.map((item) => 
