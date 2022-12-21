@@ -20,9 +20,9 @@ export default function BriefStudent() {
 
     return (
         <div>
-            {data.students.map((item, index) => {
+            {data.students.map((item) => {
                 return (
-                    <div key={index}>
+                    <div key={item.id_student}>
                         <h1>{item.nom}</h1>
 
                         <div>
@@ -32,7 +32,9 @@ export default function BriefStudent() {
                                      height: "30px",
                                      backgroundColor: "gray"
                                 }}>
-                             <div style={{ width: (item.tasks.filter((task) => task.pivot.status_task == 1).length / item.tasks.length) * 100 + "%", height: "30px", backgroundColor: "green" }}> {(item.tasks.filter((task) => task.pivot.status_task == 1).length / item.tasks.length) * 100}%</div>
+                             <div style={{ width: (item.tasks.filter((task) => task.pivot.status_task == 1).length / item.tasks.length) * 100 + "%", height: "30px", backgroundColor: "green" }}>
+                                 {(item.tasks.filter((task) => 
+                                 task.pivot.status_task == 1).length / item.tasks.length) * 100}%</div>
                             </div>
                         </div>
                     </div>
