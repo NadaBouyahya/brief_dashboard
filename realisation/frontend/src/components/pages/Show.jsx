@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {AiFillHome} from "react-icons/ai";
+
+import {BsFillBriefcaseFill} from "react-icons/bs"
 
 
 
@@ -18,10 +21,10 @@ export default function ShowData(props) {
         <div className="main_content flex row">
 
             <div className="vertical-menu w-1/6">
-                <a className="block p-3 hover:text-amber-400" href="#">Home</a>
+                <a className="block p-3 hover:text-amber-400" href="#"><span><AiFillHome/>Home</span> </a>
                 <a className="block p-3 hover:text-amber-400" href="#">Promotion</a>
                 <a className="block p-3 hover:text-amber-400" href="#">Apprenants</a>
-                <a className="block p-3 hover:text-amber-400" href="#">Briefs</a>
+                <a className="block p-3 hover:text-amber-400" href="#"><span> <BsFillBriefcaseFill/>Briefs</span></a>
 
             </div>
 

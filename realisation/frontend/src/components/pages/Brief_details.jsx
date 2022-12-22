@@ -32,25 +32,34 @@ export default function Consult() {
     return (
 
         <div>
-            <div>
-                <div>
+            <div className="flex flex-col mb-6">
+                <div className="flex items-center mb-4">
                     <h2>{Details.titre}</h2>
-                    <h3><GrTask />{Details.task.length} taches</h3>
+                    <div className="flex items-center ml-10">
+                        <span><GrTask /></span>
+                        <span className="ml-2">{Details.task.length} Taches</span>
+                    </div>
                 </div>
 
-                <p>{Details.brief_description}</p>
-                <li>creation date:{Details.creation_date}</li>
-                <li>livraison date{Details.livraison_date}</li>
+                <div>
+                    <p>{Details.brief_description}</p>
+                    <ul className="mt-4">
+                        <li key={Details.id_brief}><strong>Date de creation : </strong>{Details.creation_date}</li>
+                        <li key={Details.id_brief}><strong>Date de livraison : </strong>{Details.livraison_date}</li>
+                    </ul>
+                </div>
             </div>
+
             <br />
+
             <div>
-                Etat d'avancement de brief : 
+                <h1>Etat d'avancement de brief :</h1>
                 <div style={{
                     width: "200px",
                     height: "30px",
-                    backgroundColor:"gray"
+                    backgroundColor: "gray"
                 }}>
-                    <div style={{width:progress+"%", height:"30px", backgroundColor:"green"}}>{progress}%</div>
+                    <div style={{ width: progress + "%", height: "30px", backgroundColor: "green" }}>{progress}%</div>
                 </div>
             </div>
 
