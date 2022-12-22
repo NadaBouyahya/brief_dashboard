@@ -1,6 +1,6 @@
 import { hookstate, useHookstate } from "@hookstate/core";
 
-const globalState = hookstate("test");
+const globalState = hookstate([]);
 
 export const useTaskState = ()=>{
     const state = useHookstate(globalState);

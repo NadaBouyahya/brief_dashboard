@@ -4,8 +4,14 @@ import { useTaskState } from "../states/todoState";
 
 export default function Show(){
     const tasks = useTaskState();
-
     return (
-        <h1>{tasks.get()}</h1>
+
+            <ul>
+                {tasks.get().map( (todo)=> (
+                    <li>{todo}</li>
+                ) )}
+            </ul>
+
+        // <h1>{tasks.get()}</h1>
     )
 }
