@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { GrTask } from "react-icons/gr";
 import { Link } from "react-router-dom";
 // import ShowData from "./Show";
+
+
 export default function Consult() {
     const [Details, setDetails] = useState({ task: [] });
     const [progress, setProgress] = useState(0);
@@ -15,12 +17,15 @@ export default function Consult() {
         axios.get("http://127.0.0.1:8000/api/briefs/" + params.id).then((res) => {
             console.log(res);
             setDetails((old) => { return { ...old, ...res.data } });
+
             let completed = 0;
+
             for (let i = 0; i < res.data.task.length; i++) {
                 if (res.data.task[i].status == 1) {
                     completed++;
                 }
             }
+
             setProgress((completed / res.data.task.length) * 100)
 
         });
@@ -59,7 +64,9 @@ export default function Consult() {
                     height: "30px",
                     backgroundColor: "gray"
                 }}>
-                    <div style={{ width: progress + "%", height: "30px", backgroundColor: "green" }}>{progress}%</div>
+                    <div style={{ width: progress + "%", height: "30px", backgroundColor: "green" }}>
+                        {progress}%
+                    </div>
                 </div>
             </div>
 

@@ -32,7 +32,9 @@ export default function BriefStudent() {
                                      height: "30px",
                                      backgroundColor: "gray"
                                 }}>
-                             <div style={{ width: (item.tasks.filter((task) => task.pivot.status_task == 1).length / item.tasks.length) * 100 + "%", height: "30px", backgroundColor: "green" }}>
+                             <div style= {{ width: (item.tasks.filter((task) => task.pivot.status_task == 1).length / item.tasks.length) * 100 + "%", 
+                                  height: "30px", backgroundColor: "green" }}>
+
                                  {(item.tasks.filter((task) => 
                                  task.pivot.status_task == 1).length / item.tasks.length) * 100}%</div>
                             </div>
