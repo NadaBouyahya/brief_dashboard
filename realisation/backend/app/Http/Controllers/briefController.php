@@ -30,6 +30,7 @@ class briefController extends Controller
     public function insert_brief(Request $req){
         $brief = new briefs();
         $brief->titre = $req->titre;
+        $brief->brief_description = $req->brief_description;
         $brief->creation_date = $req->creation_date;
         $brief->livraison_date = $req->livraison_date;
 

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import {AiFillHome} from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
 
-import {BsFillBriefcaseFill} from "react-icons/bs"
+import { BsFillBriefcaseFill } from "react-icons/bs"
 
 
 
@@ -21,14 +21,15 @@ export default function ShowData(props) {
         <div className="main_content flex row">
 
             <div className="vertical-menu w-1/6">
-                <a className="block p-3 hover:text-amber-400" href="#"><span><AiFillHome/>Home</span> </a>
+                <a className="block p-3 hover:text-amber-400" href="#"><span><AiFillHome />Home</span> </a>
                 <a className="block p-3 hover:text-amber-400" href="#">Promotion</a>
                 <a className="block p-3 hover:text-amber-400" href="#">Apprenants</a>
-                <a className="block p-3 hover:text-amber-400" href="#"><span> <BsFillBriefcaseFill/>Briefs</span></a>
+                <a className="block p-3 hover:text-amber-400" href="#"><span> <BsFillBriefcaseFill />Briefs</span></a>
 
             </div>
 
             <div className="flex w-9/12 bg-slate-100 p-12 ">
+                <Link to={"briefs/add"}>add new bief</Link>
                 <div className="brief_container flex bg-white">
                     {props.text.map((item) =>
                         <div className="brief_info flex ml-6 flex-col items-center items-center">
